@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>WAVIFY - Perfil</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#35343a",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-tertiary-fixed": "#0f1c2c",
+                        "surface-container-lowest": "#0e0e13",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-secondary-container": "#5b3800",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "secondary": "#ffb95f",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-bright": "#39383e",
+                        "inverse-on-surface": "#303036",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-error": "#690005",
+                        "primary-fixed": "#eaddff",
+                        "surface-container-low": "#1b1b20",
+                        "primary": "#d2bbff",
+                        "surface-container-highest": "#35343a",
+                        "error-container": "#93000a",
+                        "primary-container": "#7c3aed",
+                        "on-surface": "#e4e1e9",
+                        "primary-fixed-dim": "#d2bbff",
+                        "tertiary-container": "#5a687a",
+                        "inverse-primary": "#732ee4",
+                        "tertiary-fixed": "#d6e4f9",
+                        "surface": "#131318",
+                        "on-primary-container": "#ede0ff",
+                        "surface-container-high": "#2a292f",
+                        "outline": "#958da1",
+                        "on-surface-variant": "#ccc3d8",
+                        "secondary-fixed": "#ffddb8",
+                        "on-background": "#e4e1e9",
+                        "tertiary": "#bac8dc",
+                        "on-primary-fixed": "#25005a",
+                        "on-tertiary-container": "#d9e7fc",
+                        "surface-tint": "#d2bbff",
+                        "outline-variant": "#4a4455",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "on-tertiary-fixed-variant": "#3a4859",
+                        "on-primary": "#3f008e",
+                        "on-tertiary": "#243141",
+                        "secondary-container": "#ee9800",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131318",
+                        "on-secondary": "#472a00",
+                        "surface-container": "#1f1f25"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "player_height": "96px",
+                        "margin_desktop": "40px",
+                        "base_unit": "8px",
+                        "sidebar_width": "260px",
+                        "margin_mobile": "16px"
+                    },
+                    fontFamily: {
+                        "headline-sm": ["Syne"],
+                        "body-md": ["DM Sans"],
+                        "label-lg": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "headline-lg-mobile": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "body-sm": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "headline-xl": ["Syne"],
+                        "headline-md": ["Syne"]
+                    },
+                    fontSize: {
+                        "headline-sm": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "label-lg": ["14px", { lineHeight: "1.2", letterSpacing: "0.1em", fontWeight: "700" }],
+                        "label-md": ["12px", { lineHeight: "1.2", fontWeight: "500" }],
+                        "headline-lg-mobile": ["36px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-xl": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "headline-md": ["32px", { lineHeight: "1.2", fontWeight: "700" }]
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'mesh-gradient': 'mesh 15s ease infinite',
+                    },
+                    keyframes: {
+                        mesh: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .mesh-bg {
+            background: linear-gradient(-45deg, #0A0A0F, #131318, #0D1B2A, #1a1025);
+            background-size: 400% 400%;
+            animation: mesh 15s ease infinite;
+        }
+        @keyframes mesh {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .profile-glow {
+            box-shadow: 0 0 50px rgba(124, 58, 237, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen mesh-bg selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- TopNavBar (Web Only) -->
+<nav class="hidden md:flex bg-background/40 backdrop-blur-md fixed top-0 right-0 w-[calc(100%-260px)] h-20 items-center justify-between px-10 z-40 transition-all duration-300">
+    <div class="flex-1 max-w-xl">
+        <div class="relative group focus-within:ring-2 focus-within:ring-primary focus-within:shadow-[0_0_20px_rgba(124,58,237,0.4)] rounded-full transition-all duration-300 bg-white/5">
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+            <input class="w-full bg-transparent border-none py-3 pl-12 pr-4 rounded-full text-on-surface placeholder:text-on-surface-variant/50 focus:ring-0 font-body-sm" placeholder="Buscar faixas, artistas, álbuns..." type="text"/>
+        </div>
+    </div>
+    <div class="flex items-center gap-6 ml-8">
+        <button class="text-on-surface-variant hover:text-primary transition-colors relative group">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full shadow-[0_0_8px_rgba(124,58,237,0.8)]"></span>
+        </button>
+        <a href="wavify_upload.html" class="bg-gradient-to-r from-primary to-secondary text-on-primary-fixed font-label-md text-label-md px-6 py-2 rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_20px_rgba(124,58,237,0.6)]">
+            Upload
+        </a>
+        <a href="wavify_profile.html" class="w-10 h-10 rounded-full overflow-hidden border border-primary transition-colors cursor-pointer shrink-0">
+            <img id="header-profile-img" alt="User Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCocV5HrLtEgw93YC8-9gBUa8oK_RlDwmftAqIwtQK0pzKWgmoL37qgVhJ9h11mvCgngvgpVZtYCbol8X7NqGq1xPE8v5ucNSkpbDqkTlWY8bQzra2w8DZFMSyZD4_qrkoxdNEAwUQIHE_grh9XnUYyrEiIG0r2L-LdAcbnjZHJverIAzuDwe3DNcgdVh6mHjcV0vsa-C1somLph2WLk2KRHrt_j9jy-8G9uyZqeKEANaFZmLAEQ_tLIVtLthqExlde2GgsRaJUdM"/>
+        </a>
+    </div>
+</nav>
+
+<!-- SideNavBar (Web Only) -->
+<aside class="hidden md:flex flex-col bg-surface/80 backdrop-blur-xl fixed left-0 top-0 h-full w-[260px] border-r border-white/10 shadow-2xl shadow-primary/20 p-6 gap-8 z-50">
+    <div class="flex items-center gap-4">
+        <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(124,58,237,0.4)]">
+            <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+        </div>
+        <div>
+            <h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">WAVIFY</h1>
+            <p class="font-label-md text-label-md text-on-surface-variant opacity-70 uppercase tracking-widest text-[10px]">Áudio Premium</p>
+        </div>
+    </div>
+    <div class="flex-1 flex flex-col gap-2 mt-4">
+        <a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-full transition-all duration-300 font-label-lg text-label-lg group cursor-pointer" href="wavify_home.php">
+            <span class="material-symbols-outlined">home</span>
+            <span>Início</span>
+        </a>
+        <a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-full transition-all duration-300 font-label-lg text-label-lg cursor-pointer" href="wavify_discover.html">
+            <span class="material-symbols-outlined">explore</span>
+            <span>Descobrir</span>
+        </a>
+        <a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-full transition-all duration-300 font-label-lg text-label-lg cursor-pointer" href="wavify_my_library.php">
+            <span class="material-symbols-outlined">library_music</span>
+            <span>Minha Biblioteca</span>
+        </a>
+        <a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-full transition-all duration-300 font-label-lg text-label-lg cursor-pointer" href="#">
+            <span class="material-symbols-outlined">playlist_play</span>
+            <span>Playlists</span>
+        </a>
+        <a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-full transition-all duration-300 font-label-lg text-label-lg cursor-pointer" href="wavify_upload.html">
+            <span class="material-symbols-outlined">cloud_upload</span>
+            <span>Upload</span>
+        </a>
+    </div>
+    <div class="mt-auto flex flex-col gap-2 border-t border-white/5 pt-6">
+        <a class="flex items-center gap-4 px-4 py-3 bg-white/5 text-primary rounded-full border border-primary/20 transition-all duration-300 font-label-lg text-label-lg cursor-pointer shadow-[0_0_15px_rgba(124,58,237,0.2)]" href="wavify_profile.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+            <span>Configurações</span>
+        </a>
+        <a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-error hover:bg-error/10 rounded-full transition-all duration-300 font-label-lg text-label-lg cursor-pointer" href="index.php">
+            <span class="material-symbols-outlined">logout</span>
+            <span>Sair</span>
+        </a>
+    </div>
+</aside>
+
+<!-- Main Content Area -->
+<main class="md:ml-[260px] pb-[120px] md:pt-32 min-h-screen px-4 md:px-10 max-w-4xl mx-auto">
+    <!-- Mobile Header -->
+    <header class="md:hidden flex items-center justify-between py-6">
+        <h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tighter">WAVIFY</h1>
+        <a href="wavify_profile.html" class="w-10 h-10 rounded-full overflow-hidden border border-primary">
+            <img id="mobile-header-profile-img" alt="User Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCocV5HrLtEgw93YC8-9gBUa8oK_RlDwmftAqIwtQK0pzKWgmoL37qgVhJ9h11mvCgngvgpVZtYCbol8X7NqGq1xPE8v5ucNSkpbDqkTlWY8bQzra2w8DZFMSyZD4_qrkoxdNEAwUQIHE_grh9XnUYyrEiIG0r2L-LdAcbnjZHJverIAzuDwe3DNcgdVh6mHjcV0vsa-C1somLph2WLk2KRHrt_j9jy-8G9uyZqeKEANaFZmLAEQ_tLIVtLthqExlde2GgsRaJUdM"/>
+        </a>
+    </header>
+
+    <div class="profile-glow bg-surface-container-low/40 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-white/5">
+        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 tracking-tight">Perfil do Usuário</h2>
+        
+        <form id="profile-form" class="flex flex-col md:flex-row gap-12">
+            <!-- Profile Picture Section -->
+            <div class="flex flex-col items-center gap-6">
+                <div class="relative group">
+                    <div class="w-48 h-48 rounded-full overflow-hidden border-2 border-primary/30 p-1 bg-background shadow-2xl group-hover:border-primary transition-colors duration-500">
+                        <img id="profile-preview-img" alt="Profile Vista" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCocV5HrLtEgw93YC8-9gBUa8oK_RlDwmftAqIwtQK0pzKWgmoL37qgVhJ9h11mvCgngvgpVZtYCbol8X7NqGq1xPE8v5ucNSkpbDqkTlWY8bQzra2w8DZFMSyZD4_qrkoxdNEAwUQIHE_grh9XnUYyrEiIG0r2L-LdAcbnjZHJverIAzuDwe3DNcgdVh6mHjcV0vsa-C1somLph2WLk2KRHrt_j9jy-8G9uyZqeKEANaFZmLAEQ_tLIVtLthqExlde2GgsRaJUdM"/>
+                    </div>
+                    <label for="profile-upload" class="absolute inset-0 bg-black/60 rounded-full flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer backdrop-blur-sm">
+                        <span class="material-symbols-outlined text-primary text-4xl mb-2">add_a_photo</span>
+                        <span class="text-white text-xs font-label-md uppercase tracking-widest">Alterar Foto</span>
+                        <input id="profile-upload" type="file" accept="image/*" class="hidden" />
+                    </label>
+                </div>
+                <div class="text-center">
+                    <h3 class="font-headline-sm text-headline-sm text-white mb-8">Informações Básicas</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant/70">Membro WAVIFY Premium</p>
+                </div>
+            </div>
+
+            <!-- Profile Info Section -->
+            <div class="flex-1 space-y-8">
+                <div class="space-y-4">
+                    <label class="block text-on-surface-variant font-label-md text-label-md mb-2 uppercase tracking-widest">Nome de Exibição</label>
+                    
+                    <div class="space-y-2">
+                        <label for="user-name" class="block font-body-sm text-body-sm text-on-surface-variant">Nome de Perfil</label>
+                        <div class="relative group">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/50 group-focus-within:text-primary transition-colors">person</span>
+                            <input id="user-name" type="text" value="Alex Storm" placeholder="Digite seu nome" class="w-full bg-surface-container-highest border-none py-4 pl-12 pr-4 rounded-xl text-on-surface placeholder:text-on-surface-variant/30 focus:ring-2 focus:ring-primary/50 transition-all font-body-md" />
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 opacity-50">
+                        <label class="block font-body-sm text-body-sm text-on-surface-variant">Endereço de E-mail (Somente leitura)</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/50">mail</span>
+                            <input id="user-email-input" type="email" disabled value="alex.storm@wavify.com" class="w-full bg-surface-container-highest border-none py-4 pl-12 pr-4 rounded-xl text-on-surface font-body-md" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 flex flex-col sm:flex-row gap-4">
+                    <button id="save-profile-btn" class="flex-1 bg-gradient-to-r from-primary to-secondary text-on-primary-fixed font-bold py-4 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_10px_25px_rgba(124,58,237,0.3)] hover:shadow-[0_15px_35px_rgba(124,58,237,0.5)] flex items-center justify-center gap-2" type="submit">
+                        <span class="material-symbols-outlined">save</span> Salvar Alterações
+                    </button>
+                    <a class="flex-1 bg-white/5 border border-white/10 text-on-surface font-bold py-4 rounded-2xl hover:bg-white/10 text-center transition-all" href="wavify_home.php">
+                        Cancelar
+                    </a>
+                </div>
+
+                <div id="save-status" class="hidden text-primary font-label-md text-label-md animate-pulse">
+                    Alterações salvas!
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer class="fixed bottom-0 left-0 w-full h-[96px] z-50 bg-surface-container/90 backdrop-blur-2xl border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] flex items-center justify-between px-4 md:px-8">
+    <!-- Track Info -->
+    <div class="flex items-center gap-4 w-1/3 min-w-[200px]">
+        <img alt="Now Playing Art" class="w-14 h-14 rounded-md object-cover hidden sm:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE8qW-12I3R5AbdBkyMrbYsfIWcnx5Hfw7KtsNTJPyMHUVYOT7iFXhM2dv-zHwAK_Skvb-MKyyDDkSYTrF7Cs-qwLmp2_Xe-RShetIuoBXsmXdFXlzOC-aqEMkwddXuICfYFY-_gYJcYek11EVxyz8Wp9q04wfaJa6jHxjspngBcOoZWnSlW12xjgXM5VwJ6v0mv7UqZwFbpgoTUbogyiccDWk-UaPs-kncYghGeyMUvFDowiUoxAKdFMOuHEYT0GMaVSe3kjDCZM"/>
+        <div class="flex flex-col">
+            <a class="font-label-lg text-label-lg text-on-surface hover:underline truncate" href="#">Midnight Drive</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors truncate" href="#">Luna Wave</a>
+        </div>
+    </div>
+    <!-- Controls -->
+    <div class="flex flex-col items-center justify-center w-1/3 max-w-md">
+        <div class="flex items-center gap-6 mb-2">
+            <button class="text-on-surface-variant hover:text-on-surface transition-colors">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">skip_previous</span>
+            </button>
+            <button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary-fixed shadow-[0_0_20px_rgba(124,58,237,0.6)]">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">pause</span>
+            </button>
+            <button class="text-on-surface-variant hover:text-on-surface transition-colors">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">skip_next</span>
+            </button>
+        </div>
+        <div class="w-full flex items-center gap-2 hidden md:flex">
+            <span class="font-label-md text-label-md text-on-surface-variant/70 text-[10px]">1:24</span>
+            <div class="h-1 bg-surface-bright rounded-full flex-1 relative cursor-pointer group">
+                <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-secondary rounded-full w-[35%]"></div>
+            </div>
+            <span class="font-label-md text-label-md text-on-surface-variant/70 text-[10px]">4:05</span>
+        </div>
+    </div>
+    <div class="w-1/3 flex justify-end"></div>
+</footer>
+
+<div class="md:hidden fixed bottom-[96px] left-0 w-full bg-surface-container/95 backdrop-blur-xl border-t border-white/10 flex justify-around items-center h-16 z-40">
+    <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="wavify_home.php">
+        <span class="material-symbols-outlined text-2xl">home</span>
+        <span class="font-label-md text-[10px]">Início</span>
+    </a>
+    <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="wavify_discover.html">
+        <span class="material-symbols-outlined text-2xl">explore</span>
+        <span class="font-label-md text-[10px]">Descobrir</span>
+    </a>
+    <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="wavify_my_library.php">
+        <span class="material-symbols-outlined text-2xl">library_music</span>
+        <span class="font-label-md text-[10px]">Biblioteca</span>
+    </a>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

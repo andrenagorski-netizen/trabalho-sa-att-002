@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WAVIFY - Enviar Faixa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#35343a",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-tertiary-fixed": "#0f1c2c",
+                        "surface-container-lowest": "#0e0e13",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-secondary-container": "#5b3800",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131318",
+                        "secondary": "#ffb95f",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-bright": "#39383e",
+                        "inverse-on-surface": "#303036",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-error": "#690005",
+                        "primary-fixed": "#eaddff",
+                        "surface-container-low": "#1b1b20",
+                        "primary": "#d2bbff",
+                        "surface-container-highest": "#35343a",
+                        "error-container": "#93000a",
+                        "primary-container": "#7c3aed",
+                        "on-surface": "#e4e1e9",
+                        "primary-fixed-dim": "#d2bbff",
+                        "tertiary-container": "#5a687a",
+                        "inverse-primary": "#732ee4",
+                        "tertiary-fixed": "#d6e4f9",
+                        "surface": "#131318",
+                        "on-primary-container": "#ede0ff",
+                        "surface-container-high": "#2a292f",
+                        "outline": "#958da1",
+                        "on-surface-variant": "#ccc3d8",
+                        "secondary-fixed": "#ffddb8",
+                        "on-background": "#e4e1e9",
+                        "tertiary": "#bac8dc",
+                        "on-primary-fixed": "#25005a",
+                        "on-tertiary-container": "#d9e7fc",
+                        "surface-tint": "#d2bbff",
+                        "outline-variant": "#4a4455",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "on-tertiary-fixed-variant": "#3a4859",
+                        "on-primary": "#3f008e",
+                        "on-tertiary": "#243141",
+                        "secondary-container": "#ee9800",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131318",
+                        "on-secondary": "#472a00",
+                        "surface-container": "#1f1f25"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "player_height": "96px",
+                        "margin_desktop": "40px",
+                        "base_unit": "8px",
+                        "sidebar_width": "260px",
+                        "margin_mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Syne"],
+                        "body-md": ["DM Sans"],
+                        "label-lg": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "headline-lg-mobile": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "body-sm": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "headline-xl": ["Syne"],
+                        "headline-md": ["Syne"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    },
+                    "animation": {
+                        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                        "spin-slow": "spin 8s linear infinite",
+                        "mesh-grad": "mesh-grad 15s ease infinite alternate",
+                        "dash-move": "dash 20s linear infinite"
+                    },
+                    "keyframes": {
+                        "mesh-grad": {
+                            "0%": { backgroundPosition: "0% 50%" },
+                            "100%": { backgroundPosition: "100% 50%" }
+                        },
+                        "dash": {
+                            "to": { strokeDashoffset: "-1000" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .mesh-bg {
+            background: radial-gradient(circle at 10% 20%, #0D1B2A 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, #0A0A0F 0%, transparent 40%),
+                        linear-gradient(135deg, #0A0A0F, #131318);
+            background-size: 200% 200%;
+            animation: mesh-grad 15s ease infinite alternate;
+        }
+        .vinyl-texture {
+            background-image: repeating-radial-gradient(
+                circle at center,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.02) 2px,
+                rgba(255, 255, 255, 0.02) 4px
+            );
+        }
+        .upload-dashed {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%237c3aed' stroke-width='4' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .upload-dashed:hover, .upload-dashed.drag-over {
+            background-color: rgba(124, 58, 237, 0.05);
+            box-shadow: 0 0 40px rgba(124, 58, 237, 0.2);
+        }
+        .upload-dashed:hover svg rect, .upload-dashed.drag-over svg rect {
+            animation: dash 1s linear infinite;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -24;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden min-h-screen">
+<!-- Background Layers -->
+<div class="fixed inset-0 mesh-bg -z-20"></div>
+<div class="fixed inset-0 vinyl-texture -z-10 opacity-30 pointer-events-none"></div>
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface/80 backdrop-blur-xl fixed left-0 top-0 h-full w-[260px] border-r border-white/10 shadow-2xl shadow-primary/20 flex-col p-6 gap-8 z-40">
+<!-- Header -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">graphic_eq</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">WAVIFY</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Áudio Premium</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 rounded-full hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">cloud_upload</span> Enviar Faixa
+        </button>
+<!-- Main Nav -->
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-4 p-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-300" href="wavify_home.php">
+<span class="material-symbols-outlined">home</span> Início
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 p-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-300" href="wavify_discover.html">
+<span class="material-symbols-outlined">explore</span> Descobrir
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 p-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-300" href="wavify_my_library.php">
+<span class="material-symbols-outlined">library_music</span> Minha Biblioteca
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 p-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">playlist_play</span> Playlists
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 p-3 font-label-lg text-label-lg bg-gradient-to-r from-primary to-secondary text-on-primary-fixed rounded-full border-l-2 border-primary shadow-[0_0_15px_rgba(124,58,237,0.5)] scale-95 transition-transform" href="wavify_upload.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cloud_upload</span> Enviar
+                </a>
+</li>
+</ul>
+<!-- Footer Nav -->
+<ul class="flex flex-col gap-2 mt-auto">
+<li>
+<a class="flex items-center gap-4 p-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-300" href="wavify_profile.html">
+<span class="material-symbols-outlined">settings</span> Configurações
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 p-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-300" href="index.php">
+<span class="material-symbols-outlined">logout</span> Sair
+                </a>
+</li>
+</ul>
+</nav>
+<!-- TopNavBar -->
+<header class="hidden md:flex bg-background/40 backdrop-blur-md fixed top-0 right-0 w-[calc(100%-260px)] h-20 items-center justify-between px-10 z-30">
+<!-- Search -->
+<div class="flex-1 max-w-md relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container/50 border border-white/10 rounded-full py-3 pl-12 pr-4 text-on-surface focus:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:shadow-[0_0_20px_rgba(124,58,237,0.4)] transition-all font-body-md text-body-md placeholder:text-on-surface-variant/50" placeholder="Buscar..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-secondary rounded-full shadow-[0_0_10px_rgba(255,185,95,0.8)]"></span>
+</button>
+        <a href="wavify_upload.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] transition-all">
+            Enviar
+        </a>
+        <a href="wavify_profile.html" class="w-10 h-10 rounded-full overflow-hidden border border-white/10 hover:border-primary transition-colors cursor-pointer shrink-0">
+            <img id="header-profile-img" alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcuejUY_63rYOvvbudcw3siusury8A7c_4QttBMOp651h5AoFmQT-pInQVwW4mkvo7LS0yrAi5mu3oPSwWaUs9llA0HhpKVdaUuC3G9jOT-HtKApjCvSPUC54-c4l1CR9j13s-dqhKMpypMD8Ax5hoPHE6ZfiMpSRETANGmrQVDUz3bZ9kfcLzPhj4fdxxYnuplMNHPx8Ryc0mPUpbMxVkMf-Ac_LvMXwj-J1af-jIKrEujreg6P2C89Sb2Y57mL4RIhULl_dpngE"/>
+        </a>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="md:ml-[260px] pt-24 md:pt-32 pb-[120px] px-margin_mobile md:px-margin_desktop min-h-screen flex flex-col items-center">
+<!-- Hero Section -->
+<div class="text-center mb-12 max-w-2xl w-full">
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface tracking-tight mb-4 drop-shadow-[0_0_20px_rgba(210,187,255,0.2)]">Envie seu Som</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Carregue arquivos de áudio de alta qualidade. Nós cuidamos do resto.</p>
+</div>
+<!-- Upload Zone -->
+<div class="w-full max-w-3xl aspect-[16/9] md:aspect-[21/9] upload-dashed relative flex flex-col items-center justify-center p-8 cursor-pointer group mb-12" id="upload-zone">
+<div class="absolute inset-0 bg-surface/20 backdrop-blur-sm rounded-xl -z-10"></div>
+<div class="relative w-24 h-24 mb-6 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[80px] text-primary absolute inset-0 flex items-center justify-center opacity-20 animate-spin-slow">album</span>
+<span class="material-symbols-outlined text-5xl text-primary absolute inset-0 flex items-center justify-center drop-shadow-[0_0_15px_rgba(124,58,237,0.8)]">upload</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 group-hover:text-primary transition-colors text-center">Solte seu MP3 aqui ou clique para buscar</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center max-w-md">Suporta WAV, FLAC, MP3 e AIFF. Tamanho máximo do arquivo 250MB.</p>
+<input accept="audio/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file"/>
+</div>
+<!-- Form Section (Simulated State) -->
+<div class="w-full max-w-3xl bg-surface-container/60 backdrop-blur-2xl p-8 rounded-xl border border-white/5 shadow-2xl hidden" id="upload-form">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Cover Art -->
+<div class="w-full md:w-1/3 flex flex-col gap-4">
+<div class="aspect-square bg-surface border border-white/10 rounded-lg flex flex-col items-center justify-center relative overflow-hidden group cursor-pointer hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors z-10">add_photo_alternate</span>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2 z-10">Enviar Arte</p>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<!-- Fields -->
+<div class="w-full md:w-2/3 flex flex-col gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Título da Faixa</label>
+<input class="w-full bg-surface/50 border border-white/10 rounded-lg py-3 px-4 text-on-surface focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.3)] transition-all font-body-md text-body-md" placeholder="ex: Midnight City" type="text"/>
+</div>
+<div class="flex gap-4">
+<div class="space-y-2 flex-1">
+<label class="font-label-md text-label-md text-on-surface-variant">Artista</label>
+<input class="w-full bg-surface/50 border border-white/10 rounded-lg py-3 px-4 text-on-surface focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.3)] transition-all font-body-md text-body-md" placeholder="Nome do Artista" type="text"/>
+</div>
+<div class="space-y-2 flex-1">
+<label class="font-label-md text-label-md text-on-surface-variant">Gênero</label>
+<select class="w-full bg-surface/50 border border-white/10 rounded-lg py-3 px-4 text-on-surface focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.3)] transition-all font-body-md text-body-md appearance-none">
+<option>Electronic</option>
+<option>Hip Hop</option>
+<option>R&amp;B</option>
+<option>Rock</option>
+</select>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-white/10">
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface border border-white/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container shadow-[0_0_10px_rgba(124,58,237,0.3)_inset] peer-checked:shadow-[0_0_15px_rgba(124,58,237,0.6)]"></div>
+</label>
+<span class="font-body-sm text-body-sm text-on-surface">Visibilidade Pública</span>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary-fixed px-8 py-3 rounded-full font-label-lg text-label-lg hover:shadow-[0_0_30px_rgba(124,58,237,0.6)] transition-all transform hover:scale-105">
+                            Publicar Faixa
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Player Bar) -->
+<nav class="bg-surface-container/90 backdrop-blur-2xl fixed bottom-0 left-0 w-full h-[96px] z-50 border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] flex items-center justify-between px-8">
+<!-- Track Info -->
+<div class="flex items-center gap-4 w-1/4 min-w-[200px]">
+<div class="w-14 h-14 rounded-md bg-surface border border-white/10 overflow-hidden relative group cursor-pointer">
+<img alt="Album Cover" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7U5pMIhO6f4Nts3AtEByUFcjeCoDx-aXmf4LF5BmROCcLCvuUpmk5UqDCjR-HTcHOHVgJCVSK5Pq6J23CZtSrLFziRL56kNFmUfeAIqekXrtDrLOMPe9DmXDTSYEwzdvx-ukDn1M2zFk3Xk_W2Yx6mTOCuuTlElt05oUx0zTMsCyP7TM0FixyNii4TkEfEP3FFgaii5972YeFINqlMqdEaF1rj8mp1_Z7-OnAxHxuH3lnAacbOcAOptCLfUBeGLxTWBxF-IDKN4w"/>
+<div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">expand_content</span>
+</div>
+</div>
+<div class="hidden sm:block">
+<h4 class="font-body-md text-body-md font-bold text-on-surface truncate max-w-[150px]">Neon Nights</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[150px]">Synthwave Cartel</p>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors ml-2">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<!-- Controls -->
+<div class="flex flex-col items-center flex-1 max-w-2xl px-4">
+<div class="flex items-center gap-6 mb-2">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors hidden sm:block"><span class="material-symbols-outlined">shuffle</span></button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">skip_previous</span></button>
+<button class="w-12 h-12 rounded-full bg-on-surface flex items-center justify-center hover:scale-105 transition-transform text-background shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">skip_next</span></button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors hidden sm:block"><span class="material-symbols-outlined">repeat</span></button>
+</div>
+<!-- Waveform Progress (Simulated) -->
+<div class="w-full flex items-center gap-3">
+<span class="font-body-sm text-[10px] text-on-surface-variant w-8 text-right">0:00</span>
+<div class="flex-1 h-1.5 bg-surface rounded-full overflow-hidden relative cursor-pointer group">
+<div class="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-primary to-secondary group-hover:shadow-[0_0_10px_rgba(124,58,237,0.5)]"></div>
+</div>
+<span class="font-body-sm text-[10px] text-on-surface-variant w-8">3:42</span>
+</div>
+</div>
+<!-- Utility -->
+<div class="flex items-center justify-end gap-4 w-1/4 min-w-[150px] hidden md:flex">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">lyrics</span></button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">queue_music</span></button>
+<div class="flex items-center gap-2 group cursor-pointer w-24">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-primary transition-colors">volume_up</span>
+<div class="flex-1 h-1 bg-surface rounded-full overflow-hidden">
+<div class="w-2/3 h-full bg-on-surface-variant group-hover:bg-primary transition-colors"></div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        const uploadZone = document.getElementById('upload-zone');
+        const fileInput = uploadZone.querySelector('input[type="file"]');
+        const uploadForm = document.getElementById('upload-form');
+
+        // Drag and drop visuals
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadZone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadZone.addEventListener(eventName, () => {
+                uploadZone.classList.add('drag-over');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadZone.addEventListener(eventName, () => {
+                uploadZone.classList.remove('drag-over');
+            }, false);
+        });
+
+        // Handle drop or select to show form
+        uploadZone.addEventListener('drop', handleDrop, false);
+        fileInput.addEventListener('change', handleDrop, false);
+
+        function handleDrop(e) {
+            // In a real app, process the file here. 
+            // For UI purposes, we simulate the transition to the form.
+            uploadZone.style.display = 'none';
+            uploadForm.style.display = 'block';
+            uploadForm.classList.add('animate-pulse-slow');
+            setTimeout(() => {
+                uploadForm.classList.remove('animate-pulse-slow');
+            }, 1000);
+        }
+    </script>
+    <script src="main.js"></script>
+</body></html>
